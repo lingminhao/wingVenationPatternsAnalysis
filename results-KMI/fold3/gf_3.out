@@ -1,0 +1,211 @@
+             GGG   U   U  I  DDDD   EEEE
+            G   G  U   U  I  D   D  E
+            G      U   U  I  D   D  E
+            G  GG  U   U  I  D   D  EEE
+            G   G  U   U  I  D   D  E
+            G   G  U   U  I  D   D  E
+             GGG    UUU   I  DDDD   EEEE
+   
+ GUIDE Classification and Regression Trees and Forests
+ Version 40.1 (Build date: March 15, 2022)         
+ Compiled with NAG Fortran 6.2.0 on macOS Monterey 12.3.1              
+ Copyright (c) 1997-2020 Wei-Yin Loh. All rights reserved.
+ This software is based upon work supported by the U.S. Army Research Office,
+ the National Science Foundation and the National Institutes of Health.
+  
+ This job was started on 10/10/22 at 16:49
+  
+ Random forest of classification trees
+ No pruning
+ Data description file: wings.dsc
+ Training sample file: wings.txt
+ Missing value code: NA
+ Records in data file start on line 1
+ 13 N variables changed to S
+ D variable is sp
+ Number of records in data file: 751
+ Length of longest entry in data file: 20
+ Number of classes: 14
+ Training sample class proportions of D variable sp:
+             Class  #Cases     Proportion
+ A.gressitti            42     0.07011686
+ B.karnyi               43     0.07178631
+ C.albiceps             43     0.07178631
+ C.albiceps_mutant      43     0.07178631
+ C.bezziana             43     0.07178631
+ C.megacephala          42     0.07011686
+ C.nigripes             43     0.07178631
+ C.rufifacies           43     0.07178631
+ C.vicina               43     0.07178631
+ L.alba                 43     0.07178631
+ L.sericata             43     0.07178631
+ S.aquila               43     0.07178631
+ S.nudiseta             43     0.07178631
+ S.princeps             42     0.07011686
+  
+ Summary information for training sample of size 599 (excluding observations with
+ non-positive weight or missing values in d, e, t, r or z variables)
+ d=dependent, b=split and fit cat variable using indicator variables,
+ c=split-only categorical, i=fit-only categorical (via indicators),
+ s=split-only numerical, n=split and fit numerical, f=fit-only numerical,
+ m=missing-value flag variable, p=periodic variable, w=weight
+                                                  #Codes/           
+                                                  Levels/           
+  Column  Name            Minimum      Maximum    Periods   #Missing
+       1  sp         d                                 14
+       2  LD1        s   -13.67        17.37    
+       3  LD2        s   -6.070        18.49    
+       4  LD3        s   -13.99        8.214    
+       5  LD4        s   -6.802        16.05    
+       6  LD5        s   -27.64        4.453    
+       7  LD6        s   -9.103        6.314    
+       8  LD7        s   -7.349        6.561    
+       9  LD8        s   -7.430        12.69    
+      10  LD9        s   -10.08        8.536    
+      11  LD10       s   -4.232        8.389    
+      12  LD11       s   -8.400        9.425    
+      13  LD12       s   -6.931        6.209    
+      14  LD13       s   -10.18        6.197    
+      15  weight     w    1.000        1.000    
+  
+      Total  #cases w/   #missing
+     #cases    miss. D  ord. vals   #X-var   #N-var   #F-var   #S-var
+        751          0          0        0        0        0       13
+     #P-var   #M-var   #B-var   #C-var   #I-var
+          0        0        0        0        0
+ Number of cases used for training: 599
+ Number of split variables: 13
+ Number of cases excluded due to 0 weight or missing D: 152
+  
+ Number of trees in ensemble: 500
+ Number of variables used for splitting: 5
+ Simple node models
+ Estimated priors
+ Unit misclassification costs
+ Univariate split highest priority
+ No interaction splits
+ Fraction of cases used for splitting each node: .1669
+ Maximum number of split levels: 15
+ Minimum node sample size: 5
+ Mean number of terminal nodes:    23.89    
+ 
+ Classification matrix for training sample:
+ Predicted       True class
+ class      A.gressit  B.karnyi C.albicep C.albicep C.bezzian C.megacep
+ A.gressitt        42         0         0         0         0         0
+ B.karnyi           0        43         0         0         0         0
+ C.albiceps         0         0        43         0         0         0
+ C.albiceps         0         0         0        43         0         0
+ C.bezziana         0         0         0         0        43         0
+ C.megaceph         0         0         0         0         0        42
+ C.nigripes         0         0         0         0         0         0
+ C.rufifaci         0         0         0         0         0         0
+ C.vicina           0         0         0         0         0         0
+ L.alba             0         0         0         0         0         0
+ L.sericata         0         0         0         0         0         0
+ S.aquila           0         0         0         0         0         0
+ S.nudiseta         0         0         0         0         0         0
+ S.princeps         0         0         0         0         0         0
+ Total             42        43        43        43        43        42
+           C.nigripe C.rufifac  C.vicina    L.alba L.sericat  S.aquila
+ A.gressitt         0         0         0         0         0         0
+ B.karnyi           0         0         0         0         0         0
+ C.albiceps         0         0         0         0         0         0
+ C.albiceps         0         0         0         0         0         0
+ C.bezziana         0         0         0         0         0         0
+ C.megaceph         0         0         0         0         0         0
+ C.nigripes        43         0         0         0         0         0
+ C.rufifaci         0        43         0         0         0         0
+ C.vicina           0         0        43         0         0         0
+ L.alba             0         0         0        43         0         0
+ L.sericata         0         0         0         0        43         0
+ S.aquila           0         0         0         0         0        43
+ S.nudiseta         0         0         0         0         0         0
+ S.princeps         0         0         0         0         0         0
+ Total             43        43        43        43        43        43
+ 
+           S.nudiset S.princep
+ A.gressitt         0         0
+ B.karnyi           0         0
+ C.albiceps         0         0
+ C.albiceps         0         0
+ C.bezziana         0         0
+ C.megaceph         0         0
+ C.nigripes         0         0
+ C.rufifaci         0         0
+ C.vicina           0         0
+ L.alba             0         0
+ L.sericata         0         0
+ S.aquila           0         0
+ S.nudiseta        43         0
+ S.princeps         0        42
+ Total             43        42
+ 
+ Number of cases used for tree construction: 599
+ Number misclassified: 0
+ Resubstitution estimate of mean misclassification cost: .0000
+ 
+ 
+ Classification matrix for test sample:
+ Predicted      True class
+ class      A.gressit  B.karnyi C.albicep C.albicep C.bezzian C.megacep
+ A.gressitt         2         0         0         0         0         0
+ B.karnyi           0         3         0         0         0         0
+ C.albiceps         0         0        18         1         0         0
+ C.albiceps         0         0         0        19         0         0
+ C.bezziana         0         0         0         0         9         0
+ C.megaceph         0         0         1         0         0        15
+ C.nigripes         0         0         0         0         0         0
+ C.rufifaci         0         0         1         0         0         1
+ C.vicina           0         0         0         0         0         0
+ L.alba             0         0         0         0         0         0
+ L.sericata         0         0         0         0         1         0
+ S.aquila           1         0         0         0         0         0
+ S.nudiseta         0         0         0         0         1         0
+ S.princeps         0         1         0         0         0         0
+ Total              3         4        20        20        11        16
+           C.nigripe C.rufifac  C.vicina    L.alba L.sericat  S.aquila
+ A.gressitt         0         0         0         0         0         0
+ B.karnyi           0         0         0         0         0         0
+ C.albiceps         0         0         0         0         0         0
+ C.albiceps         0         0         0         0         0         0
+ C.bezziana         1         0         0         0         0         0
+ C.megaceph         0         0         0         0         0         0
+ C.nigripes         1         0         0         0         0         0
+ C.rufifaci         0         8         0         0         0         0
+ C.vicina           0         0        20         0         0         0
+ L.alba             0         0         0         2         0         0
+ L.sericata         0         0         0         0        20         0
+ S.aquila           0         0         0         0         0         4
+ S.nudiseta         0         0         0         0         0         0
+ S.princeps         0         0         0         0         0         0
+ Total              2         8        20         2        20         4
+ 
+           S.nudiset S.princep
+ A.gressitt         0         0
+ B.karnyi           0         2
+ C.albiceps         0         0
+ C.albiceps         0         0
+ C.bezziana         0         0
+ C.megaceph         0         0
+ C.nigripes         0         0
+ C.rufifaci         0         0
+ C.vicina           0         0
+ L.alba             0         0
+ L.sericata         0         0
+ S.aquila           0         0
+ S.nudiseta        20         0
+ S.princeps         0         0
+ Total             20         2
+ 
+ Number of test cases with 0 weight and nonmissing responses: 152
+ Number misclassified among them: 11
+ Test-sample estimate of mean misclassification cost: .0724
+ 
+ Number of OOB cases: 599
+ Number OOB misclassified: 0
+ OOB estimate of mean misclassification cost: .0000
+ Mean number of trees per OOB observation: 184.08
+ 
+ Predicted class probabilities are stored in gf_3.pro
+ Elapsed time in seconds: 5.2090
